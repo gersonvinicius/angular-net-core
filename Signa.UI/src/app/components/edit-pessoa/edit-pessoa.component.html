@@ -1,0 +1,19 @@
+<div *ngIf="pessoa && !showGet">
+  <h2>Detalhes</h2>
+  <div *ngIf="pessoa.pessoaId">
+    ID:
+    <input [(ngModel)]="pessoa.pessoaId" [attr.disabled]="true">
+  </div>
+  <div>
+    Nome Fantasia:
+    <input [(ngModel)]="pessoa.nomeFantasia" placeholder="Nome Fantasia">
+  </div>
+  <div>
+    CNPJ/CPF:
+    <input *ngIf="!pessoa.pessoaId" [(ngModel)]="pessoa.cnpjCpf" placeholder="CNPJ/CPF">
+    <input *ngIf="pessoa.pessoaId" [(ngModel)]="pessoa.cnpjCpf" placeholder="CNPJ/CPF" [attr.disabled]="true">
+  </div>
+  <button (click)="updatePessoa(pessoa)" *ngIf="pessoa.pessoaId">Gravar</button>
+  <button (click)="createPessoa(pessoa)" *ngIf="!pessoa.pessoaId">Criar</button>
+  <button (click)="backButton()">Voltar</button>
+</div>

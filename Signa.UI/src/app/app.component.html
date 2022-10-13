@@ -1,0 +1,27 @@
+<div *ngIf="show">
+  <h2>CONSULTA DE NOME FANTASIA</h2>
+  <button (click)="initNewPessoa()">Criar Nova Pessoa</button>
+  <br>
+  <button (click)="montarLista()">Montar Lista</button>
+  <br>
+  <button (click)="limparLista()">Limpar Lista</button>
+  <table>
+    <thead>
+      <!-- <th>#</th> -->
+      <th>Nome Fantasia</th>
+      <!-- <th>CNPJ/CPF</th> -->
+      <th colspan="2">Ações</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pessoa of pessoasLimpar">
+        <!-- <td>{{ pessoa.pessoaId}}</td> -->
+        <td>{{ pessoa.nomeFantasia }}</td>
+        <!-- <td>{{ pessoa.cnpjCpf }}</td> -->
+        <td><button (click)="editPessoa(pessoa)">Editar</button></td>
+        <td><button (click)="deletePessoa(pessoa)">Deletar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-edit-pessoa (show)="receiveShow($event)" [pessoa]="pessoaToEdit" [showGet]="show" (pessoasUpdated)="updatePessoaList($event)"></app-edit-pessoa>
