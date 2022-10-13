@@ -1,5 +1,5 @@
 # Angular e ASP .NET CORE 6
-### Para executar o Angular (SignaUI), basta entrar na pasta SignaUI, ter o node versão 16.x e o Angular 14.x instalado e digitar no terminal: ng serve -o
+### Para executar o Angular (SignaUI), basta entrar na pasta SignaUI, ter o node versão 16.x e o Angular 14.x instalado e digitar no terminal: npm install && ng serve -o
 
 ### Para executar o .NET Core (SignaAPI), basta entrar na pasta SignaUI, ter o .NET 6 instalado e digitar no terminal: dotnet run
 
